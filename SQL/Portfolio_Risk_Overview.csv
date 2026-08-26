@@ -1,0 +1,4 @@
+default_risk,total_customers,total_loans,total_debt,average_credit_score
+Low,8278,17189,2524764,675.35
+Medium,636,2302,366109,586.92
+High,495,2299,390994,565.58
