@@ -1,0 +1,5 @@
+employment_status,default_risk,total_debt,total_customers
+Employed,High,15654,12
+Student,High,241172,274
+Unemployed,High,102469,177
+Freelancer,High,31699,32
