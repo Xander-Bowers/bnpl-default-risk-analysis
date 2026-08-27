@@ -1,0 +1,11 @@
+shopping_category_most_frequent,late_payment_history,total_customers,average_debt
+Electronics,Yes,701,340.70
+Electronics,No,2114,351.61
+Fashion,Yes,913,355.26
+Fashion,No,2864,343.84
+Groceries/Essentials,Yes,121,335.79
+Groceries/Essentials,No,358,340.16
+Home/Furniture,Yes,364,352.80
+Home/Furniture,No,1056,355.68
+Travel,Yes,241,374.18
+Travel,No,677,345.65
