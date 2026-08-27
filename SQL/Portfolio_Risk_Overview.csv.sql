@@ -1,5 +1,6 @@
 /*
--- Query: SELECT 
+-- Query:
+SELECT 
 		default_risk,
 		COUNT(customer_id) AS total_customers,
 		SUM(Total_BNPL_Active_Loans) AS total_loans,
