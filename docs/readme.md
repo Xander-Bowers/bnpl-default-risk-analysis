@@ -1,20 +1,32 @@
-BNPL Default Risk Analysis
+# BNPL Default Risk Analysis
 
-# Project Overview: 
 This project analyzes 10,000 BNPL customer profiles using SQL and Tableau to identify high-risk default patterns, debt distributions, and portfolio health metrics.
 
+---
+
 ## Data Architecture & Tech Stack
-  ##Database Engine: MYSQL
-  ##Visualization: Tableau Desktop
-  ##Dataset: 10,000 customer records comprising demographic details, active loan counts, debt balances, credit scores, payment histories, and risk tiers.
 
-# Key Business Questions AND SQL Solutions
+- **Database:** MySQL
+- **Visualization:** Tableau Desktop
+- **Dataset:** 10,000 customer records
 
-1. PORTFOLIO RISK OVERVIEW
+The dataset contains demographic details, active loan counts, debt balances, credit scores, payment histories, and risk tiers.
 
-== Executive leadership requires a top-level summary of total active debt, loan volume, and credit scores segmented by default risk classification to assess overall portfolio health.
+---
 
-  ### SQL Query
+## Key Business Questions & SQL Solutions
+
+### 1. Portfolio Risk Overview
+
+**Business Question**
+
+What does the overall BNPL portfolio look like when customers are segmented by default risk?
+
+**Why it matters**
+
+Executive leadership needs a high-level view of customer risk, outstanding debt, loan volume, and credit scores to assess overall portfolio health.
+
+### SQL Query
 
 ```sql
 SELECT 
@@ -26,26 +38,3 @@ SELECT
 FROM bnpl_financial_default_risk_dataset
 GROUP BY default_risk
 ORDER BY average_credit_score DESC;
-
- **KEY INSIGHTS
-     -- Low Risk accounts for 8801 customers accounting for $2,685,300 in active debt with an average credit score of 675.33.
-     -- High Risk borrowers hold $412,598 in outstanding debt with a significantly depressed average credit score of 566.23.
-
-3. HIGH RISK DEBT EXPOSURE BY EMPLOYMENT STATUS
-       * Risk teams need to identify which employment demographics contain the highest concentration of defaulted debt to adjust credit approval limits.
-
-   #SQL Query:
-       SELECT 
-          employment_status,
-          default_risk,
-          SUM(total_bnpl_debt_usd) AS total_debt,
-          COUNT(customer_id) AS total_customers
-      FROM bnpl_financial_default_risk_dataset
-      WHERE default_risk = 'High'
-      GROUP BY 
-          employment_status, 
-          default_risk
-      ORDER BY total_debt DESC;
-
-   **KEY INSIGHTS
-   --
